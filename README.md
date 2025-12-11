@@ -16,12 +16,19 @@ npm install expotion-metal-calculator
 Импортируйте компонент:
 ```tsx
 import { MetalCalculator } from "expotion-metal-calculator";
+import "expotion-metal-calculator/dist/styles.css"; // стили компонента
 ```
 Вставьте в вашу страницу/компонент:
 ```tsx
 export default function Page() {
   return <MetalCalculator />;
 }
+```
+
+### Статические файлы
+Компонент использует SVG/изображения из `public/drawings`. Скопируйте их один раз в `public` вашего проекта:
+```bash
+cp -R node_modules/expotion-metal-calculator/public/drawings ./public/
 ```
 
 ## Описание (для npm и git)
