@@ -5,16 +5,6 @@ import clsx from "clsx";
 
 import { calculateWeight, defaultInput, ShapeId } from "../lib/calculator";
 import { metalAlloys, metals, metalShapes } from "../lib/data";
-import beamIcon from "../public/drawings/white/beam.svg";
-import squareBarIcon from "../public/drawings/white/square_bar.svg";
-import roundBarIcon from "../public/drawings/white/round_bar.svg";
-import sheetIcon from "../public/drawings/white/sheet.svg";
-import flatBarIcon from "../public/drawings/white/flat_bar.svg";
-import roundTubeIcon from "../public/drawings/white/round_tube.svg";
-import profileTubeIcon from "../public/drawings/white/profile_tube.svg";
-import metalAngleIcon from "../public/drawings/white/metal_angle.svg";
-import metalChannelIcon from "../public/drawings/white/metal_channel.svg";
-import hexBarIcon from "../public/drawings/white/hex_bar.svg";
 
 type FormState = Record<
   | "shapeId"
@@ -67,19 +57,6 @@ const shapeSlug: Record<ShapeId, string> = {
   8: "metal_angle",
   9: "metal_channel",
   10: "hex_bar",
-};
-
-const shapeIcons: Record<ShapeId, string> = {
-  1: beamIcon,
-  2: squareBarIcon,
-  3: roundBarIcon,
-  4: sheetIcon,
-  5: flatBarIcon,
-  6: roundTubeIcon,
-  7: profileTubeIcon,
-  8: metalAngleIcon,
-  9: metalChannelIcon,
-  10: hexBarIcon,
 };
 
 const toNumber = (value: string) => {
@@ -183,7 +160,10 @@ export function MetalCalculator() {
       <div className="calculator-body">
         <div className="drawing-panel">
           <div className="drawing-box">
-            <img src={shapeIcons[shapeId]} alt={metalShapes.find((s) => s.id === shapeId)?.name} />
+            <img
+              src={`/drawings/white/${shapeSlug[shapeId]}.svg`}
+              alt={metalShapes.find((s) => s.id === shapeId)?.name}
+            />
           </div>
         </div>
 

@@ -4,16 +4,6 @@ import { useEffect, useMemo, useState } from "react";
 import clsx from "clsx";
 import { calculateWeight, defaultInput } from "../lib/calculator";
 import { metalAlloys, metals, metalShapes } from "../lib/data";
-import beamIcon from "../public/drawings/white/beam.svg";
-import squareBarIcon from "../public/drawings/white/square_bar.svg";
-import roundBarIcon from "../public/drawings/white/round_bar.svg";
-import sheetIcon from "../public/drawings/white/sheet.svg";
-import flatBarIcon from "../public/drawings/white/flat_bar.svg";
-import roundTubeIcon from "../public/drawings/white/round_tube.svg";
-import profileTubeIcon from "../public/drawings/white/profile_tube.svg";
-import metalAngleIcon from "../public/drawings/white/metal_angle.svg";
-import metalChannelIcon from "../public/drawings/white/metal_channel.svg";
-import hexBarIcon from "../public/drawings/white/hex_bar.svg";
 const visibleFields = {
     1: ["width", "height", "s", "s2", "length"],
     2: ["width", "length"],
@@ -49,18 +39,6 @@ const shapeSlug = {
     8: "metal_angle",
     9: "metal_channel",
     10: "hex_bar",
-};
-const shapeIcons = {
-    1: beamIcon,
-    2: squareBarIcon,
-    3: roundBarIcon,
-    4: sheetIcon,
-    5: flatBarIcon,
-    6: roundTubeIcon,
-    7: profileTubeIcon,
-    8: metalAngleIcon,
-    9: metalChannelIcon,
-    10: hexBarIcon,
 };
 const toNumber = (value) => {
     if (!value)
@@ -133,7 +111,7 @@ export function MetalCalculator() {
         }));
     };
     const fieldIsVisible = (field) => visibleFields[shapeId].includes(field);
-    return (_jsxs("div", { className: "calculator-card", children: [_jsx("nav", { className: "shape-nav", children: metalShapes.map((shape) => (_jsx("button", { type: "button", className: clsx("shape-tab", { active: shape.id === shapeId }), onClick: () => handleChange("shapeId")(String(shape.id)), children: shape.name }, shape.id))) }), _jsxs("div", { className: "calculator-body", children: [_jsx("div", { className: "drawing-panel", children: _jsx("div", { className: "drawing-box", children: _jsx("img", { src: shapeIcons[shapeId], alt: (_a = metalShapes.find((s) => s.id === shapeId)) === null || _a === void 0 ? void 0 : _a.name }) }) }), _jsxs("form", { className: "form-panel", onSubmit: onSubmit, children: [_jsxs("section", { className: "material-block", children: [_jsxs("div", { className: "field", children: [_jsx("label", { htmlFor: "metalId", children: labels.metalId }), _jsx("select", { id: "metalId", value: form.metalId, onChange: (e) => handleChange("metalId")(e.target.value), children: metals.map((metal) => (_jsxs("option", { value: metal.id, children: [metal.name, " (", metal.density, " \u043A\u0433/\u043C\u00B3)"] }, metal.id))) })] }), _jsxs("div", { className: "field", children: [_jsx("label", { htmlFor: "alloyId", children: labels.alloyId }), _jsxs("select", { id: "alloyId", value: form.alloyId, onChange: (e) => handleChange("alloyId")(e.target.value), children: [_jsx("option", { value: "0", children: "\u0411\u0435\u0437 \u0441\u043F\u043B\u0430\u0432\u0430" }), alloysForMetal.map((alloy) => (_jsxs("option", { value: alloy.id, children: [alloy.name, " (", alloy.density, " \u043A\u0433/\u043C\u00B3)"] }, alloy.id)))] })] })] }), _jsx("section", { className: "fields-block", children: ["width", "height", "s", "s2", "diameter", "quantity", "length"].map((fieldKey) => fieldIsVisible(fieldKey) && (_jsxs("div", { className: "field compact", children: [_jsx("label", { htmlFor: fieldKey, children: labels[fieldKey] }), _jsx("input", { id: fieldKey, type: "number", inputMode: "decimal", min: "0", step: fieldKey === "s" || fieldKey === "s2" ? "0.1" : "1", value: form[fieldKey], onChange: (e) => handleChange(fieldKey)(e.target.value) })] }, fieldKey))) }), _jsxs("section", { className: "result-block", children: [_jsxs("div", { className: "weight-cell", children: [_jsx("div", { className: "weight-label", children: "\u0412\u0435\u0441, \u043A\u0433" }), _jsx("div", { className: "weight-display", "aria-label": "\u0412\u0435\u0441, \u043A\u0433", children: weight })] }), _jsxs("div", { className: "actions", children: [_jsx("button", { type: "submit", children: "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C" }), _jsx("button", { type: "button", className: "ghost", onClick: () => {
+    return (_jsxs("div", { className: "calculator-card", children: [_jsx("nav", { className: "shape-nav", children: metalShapes.map((shape) => (_jsx("button", { type: "button", className: clsx("shape-tab", { active: shape.id === shapeId }), onClick: () => handleChange("shapeId")(String(shape.id)), children: shape.name }, shape.id))) }), _jsxs("div", { className: "calculator-body", children: [_jsx("div", { className: "drawing-panel", children: _jsx("div", { className: "drawing-box", children: _jsx("img", { src: `/drawings/white/${shapeSlug[shapeId]}.svg`, alt: (_a = metalShapes.find((s) => s.id === shapeId)) === null || _a === void 0 ? void 0 : _a.name }) }) }), _jsxs("form", { className: "form-panel", onSubmit: onSubmit, children: [_jsxs("section", { className: "material-block", children: [_jsxs("div", { className: "field", children: [_jsx("label", { htmlFor: "metalId", children: labels.metalId }), _jsx("select", { id: "metalId", value: form.metalId, onChange: (e) => handleChange("metalId")(e.target.value), children: metals.map((metal) => (_jsxs("option", { value: metal.id, children: [metal.name, " (", metal.density, " \u043A\u0433/\u043C\u00B3)"] }, metal.id))) })] }), _jsxs("div", { className: "field", children: [_jsx("label", { htmlFor: "alloyId", children: labels.alloyId }), _jsxs("select", { id: "alloyId", value: form.alloyId, onChange: (e) => handleChange("alloyId")(e.target.value), children: [_jsx("option", { value: "0", children: "\u0411\u0435\u0437 \u0441\u043F\u043B\u0430\u0432\u0430" }), alloysForMetal.map((alloy) => (_jsxs("option", { value: alloy.id, children: [alloy.name, " (", alloy.density, " \u043A\u0433/\u043C\u00B3)"] }, alloy.id)))] })] })] }), _jsx("section", { className: "fields-block", children: ["width", "height", "s", "s2", "diameter", "quantity", "length"].map((fieldKey) => fieldIsVisible(fieldKey) && (_jsxs("div", { className: "field compact", children: [_jsx("label", { htmlFor: fieldKey, children: labels[fieldKey] }), _jsx("input", { id: fieldKey, type: "number", inputMode: "decimal", min: "0", step: fieldKey === "s" || fieldKey === "s2" ? "0.1" : "1", value: form[fieldKey], onChange: (e) => handleChange(fieldKey)(e.target.value) })] }, fieldKey))) }), _jsxs("section", { className: "result-block", children: [_jsxs("div", { className: "weight-cell", children: [_jsx("div", { className: "weight-label", children: "\u0412\u0435\u0441, \u043A\u0433" }), _jsx("div", { className: "weight-display", "aria-label": "\u0412\u0435\u0441, \u043A\u0433", children: weight })] }), _jsxs("div", { className: "actions", children: [_jsx("button", { type: "submit", children: "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C" }), _jsx("button", { type: "button", className: "ghost", onClick: () => {
                                                     setForm(getDefaultState());
                                                     setErrors([]);
                                                     setWeight("0.00");
