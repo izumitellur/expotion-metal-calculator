@@ -1,6 +1,6 @@
 {
   "name": "expotion-metal-calculator",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": false,
   "type": "module",
   "description": "Калькулятор массы металлопроката на Next.js 15.5.7 (TS) с встроенными данными. Пересобран из Ringil Django-пакета под Next.",
@@ -10,15 +10,31 @@
     "type": "git",
     "url": "https://github.com/izumitellur/expotion-metal-calculator.git"
   },
-  "author": "expotion_metal_calc",
+  "author": "expotion",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "public/drawings"
+  ],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "tsc -p tsconfig.build.json",
+    "build:demo": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "clsx": "^2.1.1",

@@ -1,4 +1,4 @@
-import { metalAlloys, metals } from "@/lib/data";
+import { metalAlloys, metals, type Metal, type MetalAlloy } from "./data";
 
 export type ShapeId = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
@@ -56,12 +56,12 @@ const ensurePositive = (value: number, label: string, errors: string[]) => {
 
 const getDensity = (metalId: number, alloyId: number | null) => {
   if (alloyId && alloyId > 0) {
-    const alloy = metalAlloys.find((item) => item.id === alloyId);
+    const alloy = metalAlloys.find((item: MetalAlloy) => item.id === alloyId);
     if (alloy) {
       return alloy.density;
     }
   }
-  const metal = metals.find((item) => item.id === metalId);
+  const metal = metals.find((item: Metal) => item.id === metalId);
   if (!metal) {
     throw new Error("Неизвестный металл");
   }

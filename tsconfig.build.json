@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "es2020",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "outDir": "./dist",
+    "sourceMap": false,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src/index.ts", "src/lib/**/*", "src/components/**/*"],
+  "exclude": ["node_modules", "dist", "src/app", ".next"]
+}

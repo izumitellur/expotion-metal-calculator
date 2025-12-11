@@ -3,8 +3,8 @@
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import clsx from "clsx";
 
-import { calculateWeight, defaultInput, ShapeId } from "@/lib/calculator";
-import { metalAlloys, metals, metalShapes } from "@/lib/data";
+import { calculateWeight, defaultInput, ShapeId } from "../lib/calculator";
+import { metalAlloys, metals, metalShapes } from "../lib/data";
 
 type FormState = Record<
   | "shapeId"
