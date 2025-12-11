@@ -12,6 +12,6 @@
     "sourceMap": false,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/index.ts", "src/lib/**/*", "src/components/**/*"],
+  "include": ["src/index.ts", "src/lib/**/*", "src/components/**/*", "src/types.d.ts"],
   "exclude": ["node_modules", "dist", "src/app", ".next"]
 }
