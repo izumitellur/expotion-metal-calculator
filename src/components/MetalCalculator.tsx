@@ -16,6 +16,8 @@ import {
   MetalAngleIcon,
   MetalChannelIcon,
   HexBarIcon,
+  LogoExp,
+  LogoZai,
 } from "./icons";
 
 type FormState = Record<
@@ -273,12 +275,12 @@ export function MetalCalculator() {
         <footer className="emc-footer-note">
           <span>expotion_metal_calc — разработано</span>
           <a href="https://expotion.tech" target="_blank" rel="noreferrer" className="emc-footer-link">
-            <img src="/drawings/logo/exp.svg" alt="expotion.tech" />
+            <LogoExp className="emc-footer-logo" />
             <span>expotion.tech</span>
           </a>
           <span>×</span>
           <a href="https://zaitsv.dev" target="_blank" rel="noreferrer" className="emc-footer-link">
-            <img src="/drawings/logo/zai.svg" alt="zaitsv.dev" />
+            <LogoZai className="emc-footer-logo" />
             <span>zaitsv.dev</span>
           </a>
           <span>× Ringil</span>

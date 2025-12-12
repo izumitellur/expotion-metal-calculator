@@ -259,7 +259,8 @@
   flex-wrap: wrap;
 }
 
-.emc-footer-note img {
+.emc-footer-note img,
+.emc-footer-logo {
   height: 14px;
   width: auto;
   display: inline-block;

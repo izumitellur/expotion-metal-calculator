@@ -8,4 +8,6 @@ export { ProfileTubeIcon } from "./ProfileTubeIcon";
 export { MetalAngleIcon } from "./MetalAngleIcon";
 export { MetalChannelIcon } from "./MetalChannelIcon";
 export { HexBarIcon } from "./HexBarIcon";
+export { LogoExp } from "./LogoExp";
+export { LogoZai } from "./LogoZai";
 
