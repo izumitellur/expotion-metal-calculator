@@ -143,133 +143,135 @@ export function MetalCalculator() {
   const fieldIsVisible = (field: keyof FormState) => visibleFields[shapeId].includes(field);
 
   return (
-    <div className="calculator-card">
-      <nav className="shape-nav">
-        {metalShapes.map((shape) => (
-          <button
-            key={shape.id}
-            type="button"
-            className={clsx("shape-tab", { active: shape.id === shapeId })}
-            onClick={() => handleChange("shapeId")(String(shape.id))}
-          >
-            {shape.name}
-          </button>
-        ))}
-      </nav>
+    <div className="emc-root">
+      <div className="emc-card">
+        <nav className="emc-shape-nav">
+          {metalShapes.map((shape) => (
+            <button
+              key={shape.id}
+              type="button"
+              className={clsx("emc-shape-tab", { "emc-active": shape.id === shapeId })}
+              onClick={() => handleChange("shapeId")(String(shape.id))}
+            >
+              {shape.name}
+            </button>
+          ))}
+        </nav>
 
-      <div className="calculator-body">
-        <div className="drawing-panel">
-          <div className="drawing-box">
-            <img
-              src={`/drawings/white/${shapeSlug[shapeId]}.svg`}
-              alt={metalShapes.find((s) => s.id === shapeId)?.name}
-            />
+        <div className="emc-body">
+          <div className="emc-drawing-panel">
+            <div className="emc-drawing-box">
+              <img
+                src={`/drawings/white/${shapeSlug[shapeId]}.svg`}
+                alt={metalShapes.find((s) => s.id === shapeId)?.name}
+              />
+            </div>
           </div>
+
+          <form className="emc-form-panel" onSubmit={onSubmit}>
+            <section className="emc-material-block">
+              <div className="emc-field">
+                <label htmlFor="emc-metalId">{labels.metalId}</label>
+                <select
+                  id="emc-metalId"
+                  value={form.metalId}
+                  onChange={(e) => handleChange("metalId")(e.target.value)}
+                >
+                  {metals.map((metal) => (
+                    <option key={metal.id} value={metal.id}>
+                      {metal.name} ({metal.density} кг/м³)
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="emc-field">
+                <label htmlFor="emc-alloyId">{labels.alloyId}</label>
+                <select
+                  id="emc-alloyId"
+                  value={form.alloyId}
+                  onChange={(e) => handleChange("alloyId")(e.target.value)}
+                >
+                  <option value="0">Без сплава</option>
+                  {alloysForMetal.map((alloy) => (
+                    <option key={alloy.id} value={alloy.id}>
+                      {alloy.name} ({alloy.density} кг/м³)
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </section>
+
+            <section className="emc-fields-block">
+              {(["width", "height", "s", "s2", "diameter", "quantity", "length"] as (keyof FormState)[]).map(
+                (fieldKey) =>
+                  fieldIsVisible(fieldKey) && (
+                    <div key={fieldKey} className="emc-field emc-compact">
+                      <label htmlFor={`emc-${fieldKey}`}>{labels[fieldKey]}</label>
+                      <input
+                        id={`emc-${fieldKey}`}
+                        type="number"
+                        inputMode="decimal"
+                        min="0"
+                        step={fieldKey === "s" || fieldKey === "s2" ? "0.1" : "1"}
+                        value={form[fieldKey]}
+                        onChange={(e) => handleChange(fieldKey)(e.target.value)}
+                      />
+                    </div>
+                  ),
+              )}
+            </section>
+
+            <section className="emc-result-block">
+              <div className="emc-weight-cell">
+                <div className="emc-weight-label">Вес, кг</div>
+                <div className="emc-weight-display" aria-label="Вес, кг">
+                  {weight}
+                </div>
+              </div>
+              <div className="emc-actions">
+                <button type="submit" className="emc-btn emc-btn-primary">Рассчитать</button>
+                <button
+                  type="button"
+                  className="emc-btn emc-btn-ghost"
+                  onClick={() => {
+                    setForm(getDefaultState());
+                    setErrors([]);
+                    setWeight("0.00");
+                  }}
+                >
+                  Сбросить
+                </button>
+              </div>
+            </section>
+
+            {errors.length > 0 && (
+              <div className="emc-error-panel">
+                <p>Проверьте введённые данные:</p>
+                <ul>
+                  {errors.map((err) => (
+                    <li key={err}>{err}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </form>
         </div>
 
-        <form className="form-panel" onSubmit={onSubmit}>
-          <section className="material-block">
-            <div className="field">
-              <label htmlFor="metalId">{labels.metalId}</label>
-              <select
-                id="metalId"
-                value={form.metalId}
-                onChange={(e) => handleChange("metalId")(e.target.value)}
-              >
-                {metals.map((metal) => (
-                  <option key={metal.id} value={metal.id}>
-                    {metal.name} ({metal.density} кг/м³)
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="field">
-              <label htmlFor="alloyId">{labels.alloyId}</label>
-              <select
-                id="alloyId"
-                value={form.alloyId}
-                onChange={(e) => handleChange("alloyId")(e.target.value)}
-              >
-                <option value="0">Без сплава</option>
-                {alloysForMetal.map((alloy) => (
-                  <option key={alloy.id} value={alloy.id}>
-                    {alloy.name} ({alloy.density} кг/м³)
-                  </option>
-                ))}
-              </select>
-            </div>
-          </section>
-
-          <section className="fields-block">
-            {(["width", "height", "s", "s2", "diameter", "quantity", "length"] as (keyof FormState)[]).map(
-              (fieldKey) =>
-                fieldIsVisible(fieldKey) && (
-                  <div key={fieldKey} className="field compact">
-                    <label htmlFor={fieldKey}>{labels[fieldKey]}</label>
-                    <input
-                      id={fieldKey}
-                      type="number"
-                      inputMode="decimal"
-                      min="0"
-                      step={fieldKey === "s" || fieldKey === "s2" ? "0.1" : "1"}
-                      value={form[fieldKey]}
-                      onChange={(e) => handleChange(fieldKey)(e.target.value)}
-                    />
-                  </div>
-                ),
-            )}
-          </section>
-
-          <section className="result-block">
-            <div className="weight-cell">
-              <div className="weight-label">Вес, кг</div>
-              <div className="weight-display" aria-label="Вес, кг">
-                {weight}
-              </div>
-            </div>
-            <div className="actions">
-              <button type="submit">Рассчитать</button>
-              <button
-                type="button"
-                className="ghost"
-                onClick={() => {
-                  setForm(getDefaultState());
-                  setErrors([]);
-                  setWeight("0.00");
-                }}
-              >
-                Сбросить
-              </button>
-            </div>
-          </section>
-
-          {errors.length > 0 && (
-            <div className="error-panel">
-              <p>Проверьте введённые данные:</p>
-              <ul>
-                {errors.map((err) => (
-                  <li key={err}>{err}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </form>
+        <footer className="emc-footer-note">
+          <span>expotion_metal_calc — разработано</span>
+          <a href="https://expotion.tech" target="_blank" rel="noreferrer" className="emc-footer-link">
+            <img src="/drawings/logo/exp.svg" alt="expotion.tech" />
+            <span>expotion.tech</span>
+          </a>
+          <span>×</span>
+          <a href="https://zaitsv.dev" target="_blank" rel="noreferrer" className="emc-footer-link">
+            <img src="/drawings/logo/zai.svg" alt="zaitsv.dev" />
+            <span>zaitsv.dev</span>
+          </a>
+          <span>× Ringil</span>
+        </footer>
       </div>
-
-      <footer className="footer-note">
-        <span>expotion_metal_calc — разработано</span>
-        <a href="https://expotion.tech" target="_blank" rel="noreferrer" className="footer-link">
-          <img src="/drawings/logo/exp.svg" alt="expotion.tech" />
-          <span>expotion.tech</span>
-        </a>
-        <span>×</span>
-        <a href="https://zaitsv.dev" target="_blank" rel="noreferrer" className="footer-link">
-          <img src="/drawings/logo/zai.svg" alt="zaitsv.dev" />
-          <span>zaitsv.dev</span>
-        </a>
-        <span>× Ringil</span>
-      </footer>
     </div>
   );
 }

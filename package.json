@@ -1,6 +1,6 @@
 {
   "name": "expotion-metal-calculator",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "type": "module",
   "description": "Калькулятор массы металлопроката на Next.js 15.5.7 (TS) с встроенными данными. Пересобран из Ringil Django-пакета под Next.",
@@ -11,15 +11,29 @@
     "url": "https://github.com/izumitellur/expotion-metal-calculator.git"
   },
   "author": "expotion",
+  "keywords": [
+    "metal",
+    "calculator",
+    "steel",
+    "weight",
+    "react",
+    "next.js",
+    "металлопрокат",
+    "калькулятор"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
+      "default": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
   },
   "files": [
     "dist",
@@ -30,18 +44,23 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "tsc -p tsconfig.build.json",
-    "postbuild": "mkdir -p dist && cp src/styles.css dist/styles.css",
+    "build": "tsc -p tsconfig.build.json && node -e \"require('fs').copyFileSync('src/styles.css','dist/styles.css')\"",
     "build:demo": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "clsx": "^2.1.1",
-    "next": "15.5.7",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "clsx": "^2.1.1"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react-dom": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@types/node": "^22.7.5",
@@ -49,6 +68,9 @@
     "@types/react-dom": "^18.3.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "15.5.7",
+    "next": "15.5.7",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "typescript": "5.9.2"
   }
 }
