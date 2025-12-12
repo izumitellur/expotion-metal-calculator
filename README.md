@@ -1,44 +1,63 @@
 # expotion-metal-calculator
 
-Калькулятор массы металлопроката на Next.js 15.5.7 и TypeScript 5.9.2 со встроенными данными (металлы, сплавы, профили, плотности). Проект пересобран под Next из пакета Ringil (Django-версия), лицензия MIT.
+[![npm version](https://img.shields.io/npm/v/expotion-metal-calculator.svg)](https://www.npmjs.com/package/expotion-metal-calculator)
+[![npm downloads](https://img.shields.io/npm/dm/expotion-metal-calculator.svg)](https://www.npmjs.com/package/expotion-metal-calculator)
+[![license](https://img.shields.io/npm/l/expotion-metal-calculator.svg)](https://github.com/izumitellur/expotion-metal-calculator/blob/main/LICENCE)
+
+Калькулятор массы металлопроката на React/Next.js с встроенными данными (металлы, сплавы, профили, плотности). Все SVG-иконки вшиты в компонент — работает из коробки.
 
 <p align="center">
-  <img src="./public/drawings/show.jpg" alt="expotion-metal-calculator" width="720">
+  <img src="./public/show.jpg" alt="expotion-metal-calculator" width="720">
 </p>
 
+## Установка
 
-## Использование в вашем проекте (npm)
-
-Установите пакет:
 ```bash
 npm install expotion-metal-calculator
 ```
-Импортируйте компонент:
+
+## Использование
+
 ```tsx
 import { MetalCalculator } from "expotion-metal-calculator";
-import "expotion-metal-calculator/dist/styles.css"; // стили компонента
-```
-Вставьте в вашу страницу/компонент:
-```tsx
+import "expotion-metal-calculator/styles.css";
+
 export default function Page() {
   return <MetalCalculator />;
 }
 ```
 
-### Статические файлы (SVG)
-В пакет не входят рисунки; заберите их из репозитория:
-`public/drawings` — скопируйте папку себе в `public/drawings`, иначе чертежи не отобразятся.
+## Описание
 
-## Описание (для npm и git)
-- **Что это:** UI-компонент и демо-приложение для расчёта теоретического веса металлопроката (балка, труба, лист и т.д.) с моментальным перерасчётом и проверкой размеров.
-- **Данные:** встроенные русские наименования металлов/сплавов/профилей и их плотности.
-- **Технологии:** Next.js 15.5.7, TypeScript 5.9.2.
-- **Происхождение:** пересобрано под Next из пакета Ringil (Django), лицензия MIT.
-- **Репозиторий:** https://github.com/izumitellur/expotion-metal-calculator.git
+- **Что это:** UI-компонент для расчёта теоретического веса металлопроката (балка, труба, лист и т.д.) с моментальным перерасчётом
+- **Профили:** двутавр, квадрат, круг, лист, полоса, труба круглая/профильная, уголок, швеллер, шестигранник
+- **Данные:** встроенные русские наименования металлов/сплавов и их плотности
+- **SVG:** все чертежи вшиты в компонент, ничего копировать не нужно
 
-## Копирайт и лицензия
+## Экспорты
 
-- Copyright © 2022 Ringil (оригинальный Django-пакет).
-- Copyright © 2025 expotion_metal_calc.
-- Лицензия: MIT (см. `LICENCE`).
-- Ссылки: [expotion.tech](https://expotion.tech) · [zaitsv.dev](https://zaitsv.dev)
+```tsx
+// Компонент
+import { MetalCalculator } from "expotion-metal-calculator";
+
+// Функция расчёта
+import { calculateWeight, defaultInput } from "expotion-metal-calculator";
+
+// Данные
+import { metalAlloys, metals, metalShapes } from "expotion-metal-calculator";
+
+// Типы
+import type { CalculatorInput, CalculatorResult, ShapeId } from "expotion-metal-calculator";
+
+// Стили
+import "expotion-metal-calculator/styles.css";
+```
+
+## Ссылки
+
+- **npm:** [npmjs.com/package/expotion-metal-calculator](https://www.npmjs.com/package/expotion-metal-calculator)
+- **GitHub:** [github.com/izumitellur/expotion-metal-calculator](https://github.com/izumitellur/expotion-metal-calculator)
+
+## Лицензия
+
+MIT © 2022 Ringil (оригинальный Django-пакет) · © 2025 [expotion.tech](https://expotion.tech) · [zaitsv.dev](https://zaitsv.dev)
