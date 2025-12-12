@@ -92,7 +92,8 @@
   justify-content: center;
 }
 
-.emc-drawing-box img {
+.emc-drawing-box img,
+.emc-shape-icon {
   width: 100%;
   height: auto;
   max-height: 520px;
@@ -258,7 +259,8 @@
   flex-wrap: wrap;
 }
 
-.emc-footer-note img {
+.emc-footer-note img,
+.emc-footer-logo {
   height: 14px;
   width: auto;
   display: inline-block;

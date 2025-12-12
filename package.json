@@ -1,6 +1,6 @@
 {
   "name": "expotion-metal-calculator",
-  "version": "0.1.6",
+  "version": "0.1.5",
   "private": false,
   "type": "module",
   "description": "Калькулятор массы металлопроката на Next.js 15.5.7 (TS) с встроенными данными. Пересобран из Ringil Django-пакета под Next.",

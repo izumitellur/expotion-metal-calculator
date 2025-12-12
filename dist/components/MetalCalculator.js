@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import clsx from "clsx";
 import { calculateWeight, defaultInput } from "../lib/calculator";
 import { metalAlloys, metals, metalShapes } from "../lib/data";
+import { BeamIcon, SquareBarIcon, RoundBarIcon, SheetIcon, FlatBarIcon, RoundTubeIcon, ProfileTubeIcon, MetalAngleIcon, MetalChannelIcon, HexBarIcon, LogoExp, LogoZai, } from "./icons";
 const visibleFields = {
     1: ["width", "height", "s", "s2", "length"],
     2: ["width", "length"],
@@ -28,17 +29,17 @@ const labels = {
     quantity: "Количество листов, шт",
     length: "L (длина), м",
 };
-const shapeSlug = {
-    1: "beam",
-    2: "square_bar",
-    3: "round_bar",
-    4: "sheet",
-    5: "flat_bar",
-    6: "round_tube",
-    7: "profile_tube",
-    8: "metal_angle",
-    9: "metal_channel",
-    10: "hex_bar",
+const shapeIcons = {
+    1: BeamIcon,
+    2: SquareBarIcon,
+    3: RoundBarIcon,
+    4: SheetIcon,
+    5: FlatBarIcon,
+    6: RoundTubeIcon,
+    7: ProfileTubeIcon,
+    8: MetalAngleIcon,
+    9: MetalChannelIcon,
+    10: HexBarIcon,
 };
 const toNumber = (value) => {
     if (!value)
@@ -60,7 +61,6 @@ const getDefaultState = () => ({
     length: "0",
 });
 export function MetalCalculator() {
-    var _a;
     const [form, setForm] = useState(getDefaultState());
     const [weight, setWeight] = useState("0.00");
     const [errors, setErrors] = useState([]);
@@ -111,9 +111,12 @@ export function MetalCalculator() {
         }));
     };
     const fieldIsVisible = (field) => visibleFields[shapeId].includes(field);
-    return (_jsx("div", { className: "emc-root", children: _jsxs("div", { className: "emc-card", children: [_jsx("nav", { className: "emc-shape-nav", children: metalShapes.map((shape) => (_jsx("button", { type: "button", className: clsx("emc-shape-tab", { "emc-active": shape.id === shapeId }), onClick: () => handleChange("shapeId")(String(shape.id)), children: shape.name }, shape.id))) }), _jsxs("div", { className: "emc-body", children: [_jsx("div", { className: "emc-drawing-panel", children: _jsx("div", { className: "emc-drawing-box", children: _jsx("img", { src: `/drawings/white/${shapeSlug[shapeId]}.svg`, alt: (_a = metalShapes.find((s) => s.id === shapeId)) === null || _a === void 0 ? void 0 : _a.name }) }) }), _jsxs("form", { className: "emc-form-panel", onSubmit: onSubmit, children: [_jsxs("section", { className: "emc-material-block", children: [_jsxs("div", { className: "emc-field", children: [_jsx("label", { htmlFor: "emc-metalId", children: labels.metalId }), _jsx("select", { id: "emc-metalId", value: form.metalId, onChange: (e) => handleChange("metalId")(e.target.value), children: metals.map((metal) => (_jsxs("option", { value: metal.id, children: [metal.name, " (", metal.density, " \u043A\u0433/\u043C\u00B3)"] }, metal.id))) })] }), _jsxs("div", { className: "emc-field", children: [_jsx("label", { htmlFor: "emc-alloyId", children: labels.alloyId }), _jsxs("select", { id: "emc-alloyId", value: form.alloyId, onChange: (e) => handleChange("alloyId")(e.target.value), children: [_jsx("option", { value: "0", children: "\u0411\u0435\u0437 \u0441\u043F\u043B\u0430\u0432\u0430" }), alloysForMetal.map((alloy) => (_jsxs("option", { value: alloy.id, children: [alloy.name, " (", alloy.density, " \u043A\u0433/\u043C\u00B3)"] }, alloy.id)))] })] })] }), _jsx("section", { className: "emc-fields-block", children: ["width", "height", "s", "s2", "diameter", "quantity", "length"].map((fieldKey) => fieldIsVisible(fieldKey) && (_jsxs("div", { className: "emc-field emc-compact", children: [_jsx("label", { htmlFor: `emc-${fieldKey}`, children: labels[fieldKey] }), _jsx("input", { id: `emc-${fieldKey}`, type: "number", inputMode: "decimal", min: "0", step: fieldKey === "s" || fieldKey === "s2" ? "0.1" : "1", value: form[fieldKey], onChange: (e) => handleChange(fieldKey)(e.target.value) })] }, fieldKey))) }), _jsxs("section", { className: "emc-result-block", children: [_jsxs("div", { className: "emc-weight-cell", children: [_jsx("div", { className: "emc-weight-label", children: "\u0412\u0435\u0441, \u043A\u0433" }), _jsx("div", { className: "emc-weight-display", "aria-label": "\u0412\u0435\u0441, \u043A\u0433", children: weight })] }), _jsxs("div", { className: "emc-actions", children: [_jsx("button", { type: "submit", className: "emc-btn emc-btn-primary", children: "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C" }), _jsx("button", { type: "button", className: "emc-btn emc-btn-ghost", onClick: () => {
+    return (_jsx("div", { className: "emc-root", children: _jsxs("div", { className: "emc-card", children: [_jsx("nav", { className: "emc-shape-nav", children: metalShapes.map((shape) => (_jsx("button", { type: "button", className: clsx("emc-shape-tab", { "emc-active": shape.id === shapeId }), onClick: () => handleChange("shapeId")(String(shape.id)), children: shape.name }, shape.id))) }), _jsxs("div", { className: "emc-body", children: [_jsx("div", { className: "emc-drawing-panel", children: _jsx("div", { className: "emc-drawing-box", children: (() => {
+                                    const Icon = shapeIcons[shapeId];
+                                    return _jsx(Icon, { className: "emc-shape-icon" });
+                                })() }) }), _jsxs("form", { className: "emc-form-panel", onSubmit: onSubmit, children: [_jsxs("section", { className: "emc-material-block", children: [_jsxs("div", { className: "emc-field", children: [_jsx("label", { htmlFor: "emc-metalId", children: labels.metalId }), _jsx("select", { id: "emc-metalId", value: form.metalId, onChange: (e) => handleChange("metalId")(e.target.value), children: metals.map((metal) => (_jsxs("option", { value: metal.id, children: [metal.name, " (", metal.density, " \u043A\u0433/\u043C\u00B3)"] }, metal.id))) })] }), _jsxs("div", { className: "emc-field", children: [_jsx("label", { htmlFor: "emc-alloyId", children: labels.alloyId }), _jsxs("select", { id: "emc-alloyId", value: form.alloyId, onChange: (e) => handleChange("alloyId")(e.target.value), children: [_jsx("option", { value: "0", children: "\u0411\u0435\u0437 \u0441\u043F\u043B\u0430\u0432\u0430" }), alloysForMetal.map((alloy) => (_jsxs("option", { value: alloy.id, children: [alloy.name, " (", alloy.density, " \u043A\u0433/\u043C\u00B3)"] }, alloy.id)))] })] })] }), _jsx("section", { className: "emc-fields-block", children: ["width", "height", "s", "s2", "diameter", "quantity", "length"].map((fieldKey) => fieldIsVisible(fieldKey) && (_jsxs("div", { className: "emc-field emc-compact", children: [_jsx("label", { htmlFor: `emc-${fieldKey}`, children: labels[fieldKey] }), _jsx("input", { id: `emc-${fieldKey}`, type: "number", inputMode: "decimal", min: "0", step: fieldKey === "s" || fieldKey === "s2" ? "0.1" : "1", value: form[fieldKey], onChange: (e) => handleChange(fieldKey)(e.target.value) })] }, fieldKey))) }), _jsxs("section", { className: "emc-result-block", children: [_jsxs("div", { className: "emc-weight-cell", children: [_jsx("div", { className: "emc-weight-label", children: "\u0412\u0435\u0441, \u043A\u0433" }), _jsx("div", { className: "emc-weight-display", "aria-label": "\u0412\u0435\u0441, \u043A\u0433", children: weight })] }), _jsxs("div", { className: "emc-actions", children: [_jsx("button", { type: "submit", className: "emc-btn emc-btn-primary", children: "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C" }), _jsx("button", { type: "button", className: "emc-btn emc-btn-ghost", onClick: () => {
                                                         setForm(getDefaultState());
                                                         setErrors([]);
                                                         setWeight("0.00");
-                                                    }, children: "\u0421\u0431\u0440\u043E\u0441\u0438\u0442\u044C" })] })] }), errors.length > 0 && (_jsxs("div", { className: "emc-error-panel", children: [_jsx("p", { children: "\u041F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435 \u0432\u0432\u0435\u0434\u0451\u043D\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435:" }), _jsx("ul", { children: errors.map((err) => (_jsx("li", { children: err }, err))) })] }))] })] }), _jsxs("footer", { className: "emc-footer-note", children: [_jsx("span", { children: "expotion_metal_calc \u2014 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043E" }), _jsxs("a", { href: "https://expotion.tech", target: "_blank", rel: "noreferrer", className: "emc-footer-link", children: [_jsx("img", { src: "/drawings/logo/exp.svg", alt: "expotion.tech" }), _jsx("span", { children: "expotion.tech" })] }), _jsx("span", { children: "\u00D7" }), _jsxs("a", { href: "https://zaitsv.dev", target: "_blank", rel: "noreferrer", className: "emc-footer-link", children: [_jsx("img", { src: "/drawings/logo/zai.svg", alt: "zaitsv.dev" }), _jsx("span", { children: "zaitsv.dev" })] }), _jsx("span", { children: "\u00D7 Ringil" })] })] }) }));
+                                                    }, children: "\u0421\u0431\u0440\u043E\u0441\u0438\u0442\u044C" })] })] }), errors.length > 0 && (_jsxs("div", { className: "emc-error-panel", children: [_jsx("p", { children: "\u041F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435 \u0432\u0432\u0435\u0434\u0451\u043D\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435:" }), _jsx("ul", { children: errors.map((err) => (_jsx("li", { children: err }, err))) })] }))] })] }), _jsxs("footer", { className: "emc-footer-note", children: [_jsx("span", { children: "expotion_metal_calc \u2014 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043E" }), _jsxs("a", { href: "https://expotion.tech", target: "_blank", rel: "noreferrer", className: "emc-footer-link", children: [_jsx(LogoExp, { className: "emc-footer-logo" }), _jsx("span", { children: "expotion.tech" })] }), _jsx("span", { children: "\u00D7" }), _jsxs("a", { href: "https://zaitsv.dev", target: "_blank", rel: "noreferrer", className: "emc-footer-link", children: [_jsx(LogoZai, { className: "emc-footer-logo" }), _jsx("span", { children: "zaitsv.dev" })] }), _jsx("span", { children: "\u00D7 Ringil" })] })] }) }));
 }
