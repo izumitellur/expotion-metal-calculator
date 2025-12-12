@@ -1,104 +1,559 @@
 export function ProfileTubeIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} width="250" height="250" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M50 215.43L80 185.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 208.43L80 178.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 201.43L80 171.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 194.43L80 164.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 187.43L80 157.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 180.43L80 150.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 173.43L80 143.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 166.43L80 136.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 159.43L80 129.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 152.43L80 122.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 145.43L80 115.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 138.43L80 108.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 131.43L80 101.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 124.43L80 94.4297" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 117.43L80 87.4297" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 110.43L80 80.4297" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 103.43L80 73.4297" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 96.4297L80 66.4297" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 89.4297L80 59.4297" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 222.43L80 192.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M54.9297 224.5L84.9297 194.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M61.9297 224.5L91.9297 194.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M68.9297 224.5L98.9297 194.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M75.9297 224.5L105.93 194.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M82.9297 224.5L112.93 194.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M89.9297 224.5L119.93 194.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M96.9297 224.5L126.93 194.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M103.93 224.5L133.93 194.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M110.93 224.5L140.93 194.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M117.93 224.5L147.93 194.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M124.93 224.5L154.93 194.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M131.93 224.5L161.93 194.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M138.93 224.5L168.93 194.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M145.93 224.5L200 170.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M152.93 224.5L200 177.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M159.93 224.5L200.07 184.36" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M166.93 224.5L200 191.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M173.93 224.5L200 198.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M180.93 224.5L200 205.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M187.93 224.5L200 212.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M194.93 224.5L200 219.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M84.9297 54.5L114.93 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M91.9297 54.5L121.93 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M98.9297 54.5L128.93 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M105.93 54.5L135.93 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M112.93 54.5L142.93 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M119.93 54.5L149.93 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M126.93 54.5L156.93 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M133.93 54.5L163.93 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M140.93 54.5L170.93 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M147.93 54.5L177.93 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M154.93 54.5L184.93 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M161.93 54.5L191.93 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M168.93 54.5L198.93 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 60.4297L200 30.4297" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 67.4297L200 37.4297" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 74.4297L200 44.4297" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 81.4297L200 51.4297" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 88.4297L200 58.4297" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 95.4297L200 65.4297" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 102.43L200 72.4297" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 109.43L200 79.4297" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 116.43L200 86.4297" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 123.43L200 93.4297" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 130.43L200 100.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 137.43L200 107.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 144.43L200 114.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 151.43L200 121.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 158.43L200 128.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 165.43L200 135.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 172.43L200 142.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 179.43L200 149.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 186.43L200 156.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M170 193.43L200 163.43" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 82.43L107.93 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 75.43L100.93 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 68.43L93.93 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50.0898 61.35L86.9298 24.5" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M49.9297 54.5002L79.4897 24.9502" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 47.4302L72.49 24.9502" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 40.4302L65.49 24.9502" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 33.4302L58.49 24.9502" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M50 26.4302L51.49 24.9502" stroke="currentColor" strokeWidth="0.25" strokeMiterlimit="10"/>
-      <path d="M127.96 239.82C127.69 240.12 127.33 240.38 126.88 240.59C126.43 240.8 125.97 240.9 125.51 240.9H123.87C122.99 240.9 122.22 240.58 121.57 239.95C120.92 239.32 120.59 238.54 120.59 237.62V232.7C120.59 231.79 120.91 231.02 121.55 230.38C122.19 229.74 122.96 229.42 123.87 229.42H127.97C128.52 229.42 128.79 229.69 128.79 230.24V237.6C128.79 237.93 128.9 238.26 129.11 238.61C129.3 238.91 129.57 239.15 129.93 239.32C130.27 239.46 130.45 239.71 130.45 240.06C130.45 240.3 130.37 240.5 130.22 240.66C130.08 240.82 129.88 240.91 129.63 240.91C129.51 240.91 129.4 240.88 129.29 240.83C128.75 240.62 128.31 240.29 127.97 239.83L127.96 239.82ZM127.15 237.62V231.06H123.87C123.41 231.06 123.02 231.22 122.7 231.53C122.54 231.69 122.43 231.86 122.35 232.06C122.27 232.26 122.23 232.47 122.23 232.7V237.62C122.23 238.08 122.39 238.47 122.7 238.79C122.86 238.93 123.04 239.05 123.23 239.14C123.46 239.22 123.68 239.26 123.87 239.26H125.51C125.96 239.26 126.35 239.11 126.67 238.8C126.99 238.49 127.15 238.1 127.15 237.62Z" fill="currentColor"/>
-      <path d="M38.43 120.63H41.71C42.6 120.63 43.37 120.95 44.02 121.59C44.67 122.23 44.99 123 44.99 123.92V128.84C44.99 129.74 44.67 130.51 44.03 131.15C43.39 131.79 42.62 132.12 41.71 132.12H37.61C37.06 132.12 36.79 131.85 36.79 131.3V116.53C36.79 116.31 36.87 116.11 37.04 115.92C37.2 115.78 37.4 115.71 37.61 115.71C37.82 115.71 38.01 115.78 38.18 115.92C38.35 116.06 38.43 116.26 38.43 116.54V120.64V120.63ZM38.43 122.27V130.47H41.71C42.16 130.47 42.55 130.32 42.87 130.01C43.19 129.7 43.35 129.31 43.35 128.83V123.91C43.35 123.45 43.2 123.06 42.89 122.74C42.58 122.42 42.19 122.27 41.71 122.27H38.43Z" fill="currentColor"/>
-      <path d="M50 224.34V239.34" stroke="currentColor" strokeWidth="0.5" strokeMiterlimit="10"/>
-      <path d="M50 234.94H115" stroke="currentColor" strokeWidth="0.5" strokeMiterlimit="10"/>
-      <path d="M200 224.94V239.94" stroke="currentColor" strokeWidth="0.5" strokeMiterlimit="10"/>
-      <path d="M199.93 234.94H134.93" stroke="currentColor" strokeWidth="0.5" strokeMiterlimit="10"/>
-      <path d="M40.7197 224.46V139.46" stroke="currentColor" strokeWidth="0.5" strokeMiterlimit="10"/>
-      <path d="M50.7197 224.34H35.7197" stroke="currentColor" strokeWidth="0.5" strokeMiterlimit="10"/>
-      <path d="M50.3604 24.54H35.3604" stroke="currentColor" strokeWidth="0.5" strokeMiterlimit="10"/>
-      <path d="M40.7998 24.54V109.54" stroke="currentColor" strokeWidth="0.5" strokeMiterlimit="10"/>
-      <path d="M226.04 71.58C226.04 71.81 225.95 72 225.78 72.17C225.61 72.34 225.43 72.42 225.26 72.42L224.86 72.33C223.88 71.86 222.95 71.63 222.07 71.63C221.19 71.63 220.4 71.84 219.77 72.26C219.61 72.39 219.54 72.55 219.54 72.74C219.54 72.95 219.62 73.1 219.77 73.2L225.01 76.65C225.35 76.92 225.6 77.22 225.76 77.57C225.92 77.92 226.01 78.26 226.01 78.58C226.01 78.95 225.92 79.31 225.75 79.67C225.57 80.03 225.33 80.3 225.03 80.49C224.1 81.12 223.03 81.43 221.83 81.43C220.63 81.43 219.51 81.13 218.43 80.52C218.13 80.34 217.98 80.11 217.98 79.82L218.03 79.51L218.11 79.33L218.22 79.2C218.39 79.03 218.58 78.94 218.8 78.94L219.02 78.98L219.22 79.05C220.06 79.53 220.93 79.77 221.83 79.77C222.64 79.77 223.41 79.54 224.13 79.09C224.31 78.98 224.4 78.8 224.4 78.55C224.4 78.3 224.31 78.1 224.13 77.99L218.88 74.54C218.58 74.34 218.36 74.08 218.22 73.75C218.12 73.56 218.05 73.4 218.03 73.26C218.01 73.12 217.99 72.94 217.99 72.71C217.99 72.37 218.07 72.03 218.22 71.69C218.43 71.3 218.65 71.04 218.88 70.9C219.79 70.27 220.87 69.96 222.1 69.96C222.64 69.96 223.22 70.04 223.86 70.21C224.5 70.38 225.07 70.58 225.61 70.83C225.91 71.03 226.07 71.28 226.07 71.56L226.04 71.58Z" fill="currentColor"/>
-      <path d="M215 75.6504H165" stroke="currentColor" strokeWidth="0.5" strokeMiterlimit="10"/>
-      <path d="M200 24.5H50V224.5H200V24.5Z" stroke="currentColor" strokeMiterlimit="10"/>
-      <path d="M170 54.5H80V194.5H170V54.5Z" stroke="currentColor" strokeMiterlimit="10"/>
+    <svg
+      className={className}
+      width="250"
+      height="250"
+      viewBox="0 0 250 250"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M50 215.43L80 185.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 208.43L80 178.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 201.43L80 171.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 194.43L80 164.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 187.43L80 157.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 180.43L80 150.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 173.43L80 143.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 166.43L80 136.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 159.43L80 129.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 152.43L80 122.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 145.43L80 115.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 138.43L80 108.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 131.43L80 101.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 124.43L80 94.4297"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 117.43L80 87.4297"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 110.43L80 80.4297"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 103.43L80 73.4297"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 96.4297L80 66.4297"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 89.4297L80 59.4297"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 222.43L80 192.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M54.9297 224.5L84.9297 194.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M61.9297 224.5L91.9297 194.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M68.9297 224.5L98.9297 194.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M75.9297 224.5L105.93 194.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M82.9297 224.5L112.93 194.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M89.9297 224.5L119.93 194.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M96.9297 224.5L126.93 194.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M103.93 224.5L133.93 194.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M110.93 224.5L140.93 194.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M117.93 224.5L147.93 194.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M124.93 224.5L154.93 194.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M131.93 224.5L161.93 194.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M138.93 224.5L168.93 194.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M145.93 224.5L200 170.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M152.93 224.5L200 177.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M159.93 224.5L200.07 184.36"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M166.93 224.5L200 191.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M173.93 224.5L200 198.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M180.93 224.5L200 205.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M187.93 224.5L200 212.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M194.93 224.5L200 219.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M84.9297 54.5L114.93 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M91.9297 54.5L121.93 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M98.9297 54.5L128.93 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M105.93 54.5L135.93 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M112.93 54.5L142.93 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M119.93 54.5L149.93 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M126.93 54.5L156.93 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M133.93 54.5L163.93 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M140.93 54.5L170.93 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M147.93 54.5L177.93 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M154.93 54.5L184.93 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M161.93 54.5L191.93 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M168.93 54.5L198.93 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 60.4297L200 30.4297"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 67.4297L200 37.4297"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 74.4297L200 44.4297"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 81.4297L200 51.4297"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 88.4297L200 58.4297"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 95.4297L200 65.4297"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 102.43L200 72.4297"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 109.43L200 79.4297"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 116.43L200 86.4297"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 123.43L200 93.4297"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 130.43L200 100.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 137.43L200 107.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 144.43L200 114.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 151.43L200 121.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 158.43L200 128.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 165.43L200 135.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 172.43L200 142.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 179.43L200 149.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 186.43L200 156.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M170 193.43L200 163.43"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 82.43L107.93 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 75.43L100.93 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 68.43L93.93 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50.0898 61.35L86.9298 24.5"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M49.9297 54.5002L79.4897 24.9502"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 47.4302L72.49 24.9502"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 40.4302L65.49 24.9502"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 33.4302L58.49 24.9502"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50 26.4302L51.49 24.9502"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M127.96 239.82C127.69 240.12 127.33 240.38 126.88 240.59C126.43 240.8 125.97 240.9 125.51 240.9H123.87C122.99 240.9 122.22 240.58 121.57 239.95C120.92 239.32 120.59 238.54 120.59 237.62V232.7C120.59 231.79 120.91 231.02 121.55 230.38C122.19 229.74 122.96 229.42 123.87 229.42H127.97C128.52 229.42 128.79 229.69 128.79 230.24V237.6C128.79 237.93 128.9 238.26 129.11 238.61C129.3 238.91 129.57 239.15 129.93 239.32C130.27 239.46 130.45 239.71 130.45 240.06C130.45 240.3 130.37 240.5 130.22 240.66C130.08 240.82 129.88 240.91 129.63 240.91C129.51 240.91 129.4 240.88 129.29 240.83C128.75 240.62 128.31 240.29 127.97 239.83L127.96 239.82ZM127.15 237.62V231.06H123.87C123.41 231.06 123.02 231.22 122.7 231.53C122.54 231.69 122.43 231.86 122.35 232.06C122.27 232.26 122.23 232.47 122.23 232.7V237.62C122.23 238.08 122.39 238.47 122.7 238.79C122.86 238.93 123.04 239.05 123.23 239.14C123.46 239.22 123.68 239.26 123.87 239.26H125.51C125.96 239.26 126.35 239.11 126.67 238.8C126.99 238.49 127.15 238.1 127.15 237.62Z"
+        fill="currentColor"
+      />
+      <path
+        d="M38.43 120.63H41.71C42.6 120.63 43.37 120.95 44.02 121.59C44.67 122.23 44.99 123 44.99 123.92V128.84C44.99 129.74 44.67 130.51 44.03 131.15C43.39 131.79 42.62 132.12 41.71 132.12H37.61C37.06 132.12 36.79 131.85 36.79 131.3V116.53C36.79 116.31 36.87 116.11 37.04 115.92C37.2 115.78 37.4 115.71 37.61 115.71C37.82 115.71 38.01 115.78 38.18 115.92C38.35 116.06 38.43 116.26 38.43 116.54V120.64V120.63ZM38.43 122.27V130.47H41.71C42.16 130.47 42.55 130.32 42.87 130.01C43.19 129.7 43.35 129.31 43.35 128.83V123.91C43.35 123.45 43.2 123.06 42.89 122.74C42.58 122.42 42.19 122.27 41.71 122.27H38.43Z"
+        fill="currentColor"
+      />
+      <path d="M50 224.34V239.34" stroke="currentColor" strokeWidth="0.5" strokeMiterlimit="10" />
+      <path d="M50 234.94H115" stroke="currentColor" strokeWidth="0.5" strokeMiterlimit="10" />
+      <path d="M200 224.94V239.94" stroke="currentColor" strokeWidth="0.5" strokeMiterlimit="10" />
+      <path
+        d="M199.93 234.94H134.93"
+        stroke="currentColor"
+        strokeWidth="0.5"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M40.7197 224.46V139.46"
+        stroke="currentColor"
+        strokeWidth="0.5"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50.7197 224.34H35.7197"
+        stroke="currentColor"
+        strokeWidth="0.5"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M50.3604 24.54H35.3604"
+        stroke="currentColor"
+        strokeWidth="0.5"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M40.7998 24.54V109.54"
+        stroke="currentColor"
+        strokeWidth="0.5"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M226.04 71.58C226.04 71.81 225.95 72 225.78 72.17C225.61 72.34 225.43 72.42 225.26 72.42L224.86 72.33C223.88 71.86 222.95 71.63 222.07 71.63C221.19 71.63 220.4 71.84 219.77 72.26C219.61 72.39 219.54 72.55 219.54 72.74C219.54 72.95 219.62 73.1 219.77 73.2L225.01 76.65C225.35 76.92 225.6 77.22 225.76 77.57C225.92 77.92 226.01 78.26 226.01 78.58C226.01 78.95 225.92 79.31 225.75 79.67C225.57 80.03 225.33 80.3 225.03 80.49C224.1 81.12 223.03 81.43 221.83 81.43C220.63 81.43 219.51 81.13 218.43 80.52C218.13 80.34 217.98 80.11 217.98 79.82L218.03 79.51L218.11 79.33L218.22 79.2C218.39 79.03 218.58 78.94 218.8 78.94L219.02 78.98L219.22 79.05C220.06 79.53 220.93 79.77 221.83 79.77C222.64 79.77 223.41 79.54 224.13 79.09C224.31 78.98 224.4 78.8 224.4 78.55C224.4 78.3 224.31 78.1 224.13 77.99L218.88 74.54C218.58 74.34 218.36 74.08 218.22 73.75C218.12 73.56 218.05 73.4 218.03 73.26C218.01 73.12 217.99 72.94 217.99 72.71C217.99 72.37 218.07 72.03 218.22 71.69C218.43 71.3 218.65 71.04 218.88 70.9C219.79 70.27 220.87 69.96 222.1 69.96C222.64 69.96 223.22 70.04 223.86 70.21C224.5 70.38 225.07 70.58 225.61 70.83C225.91 71.03 226.07 71.28 226.07 71.56L226.04 71.58Z"
+        fill="currentColor"
+      />
+      <path d="M215 75.6504H165" stroke="currentColor" strokeWidth="0.5" strokeMiterlimit="10" />
+      <path d="M200 24.5H50V224.5H200V24.5Z" stroke="currentColor" strokeMiterlimit="10" />
+      <path d="M170 54.5H80V194.5H170V54.5Z" stroke="currentColor" strokeMiterlimit="10" />
     </svg>
   );
 }
-

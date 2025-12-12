@@ -217,7 +217,17 @@ export function MetalCalculator() {
             </section>
 
             <section className="emc-fields-block">
-              {(["width", "height", "s", "s2", "diameter", "quantity", "length"] as (keyof FormState)[]).map(
+              {(
+                [
+                  "width",
+                  "height",
+                  "s",
+                  "s2",
+                  "diameter",
+                  "quantity",
+                  "length",
+                ] as (keyof FormState)[]
+              ).map(
                 (fieldKey) =>
                   fieldIsVisible(fieldKey) && (
                     <div key={fieldKey} className="emc-field emc-compact">
@@ -244,7 +254,9 @@ export function MetalCalculator() {
                 </div>
               </div>
               <div className="emc-actions">
-                <button type="submit" className="emc-btn emc-btn-primary">Рассчитать</button>
+                <button type="submit" className="emc-btn emc-btn-primary">
+                  Рассчитать
+                </button>
                 <button
                   type="button"
                   className="emc-btn emc-btn-ghost"
@@ -274,7 +286,12 @@ export function MetalCalculator() {
 
         <footer className="emc-footer-note">
           <span>expotion_metal_calc — разработано</span>
-          <a href="https://expotion.tech" target="_blank" rel="noreferrer" className="emc-footer-link">
+          <a
+            href="https://expotion.tech"
+            target="_blank"
+            rel="noreferrer"
+            className="emc-footer-link"
+          >
             <LogoExp className="emc-footer-logo" />
             <span>expotion.tech</span>
           </a>

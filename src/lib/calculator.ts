@@ -73,7 +73,8 @@ const round2 = (value: number) => Math.round(value * 100) / 100;
 export const calculateWeight = (input: CalculatorInput): CalculatorResult => {
   const errors: string[] = [];
 
-  const normalize = (value: number | undefined) => (Number.isFinite(value ?? NaN) ? Math.abs(value as number) : 0);
+  const normalize = (value: number | undefined) =>
+    Number.isFinite(value ?? NaN) ? Math.abs(value as number) : 0;
 
   const width = normalize(input.width);
   const height = normalize(input.height);
@@ -114,40 +115,45 @@ export const calculateWeight = (input: CalculatorInput): CalculatorResult => {
         errors.push(`Балка: высота должна быть ≥ 2 × толщине стенки (${height} < ${s * 2})`);
       }
       if (!errors.length) {
-        volume = (width * height - 2 * (height - 2 * s) * (width - s2) / 2) / 1_000_000 * length;
+        volume =
+          ((width * height - (2 * (height - 2 * s) * (width - s2)) / 2) / 1_000_000) * length;
       }
       break;
     case 2: // Квадрат
-      volume = (width ** 2) / 1_000_000 * length;
+      volume = (width ** 2 / 1_000_000) * length;
       break;
     case 3: // Круг
-      volume = Math.PI * diameter ** 2 / 4 / 1_000_000 * length;
+      volume = ((Math.PI * diameter ** 2) / 4 / 1_000_000) * length;
       break;
     case 4: // Лист
-      volume = width * height / 1_000_000 * s * quantity / 1_000;
+      volume = (((width * height) / 1_000_000) * s * quantity) / 1_000;
       break;
     case 5: // Полоса
-      volume = width * length / 1_000_000 * s;
+      volume = ((width * length) / 1_000_000) * s;
       break;
     case 6: // Труба круглая
       if (diameter < s * 2) {
         errors.push(`Труба: диаметр должен быть ≥ 2 × толщине стенки (${diameter} < ${s * 2})`);
       } else {
-        volume = Math.PI * (diameter ** 2 - (diameter - s * 2) ** 2) / 4 / 1_000_000 * length;
+        volume = ((Math.PI * (diameter ** 2 - (diameter - s * 2) ** 2)) / 4 / 1_000_000) * length;
       }
       break;
     case 7: // Труба профильная
       if (Math.min(width, height) < s * 2) {
-        errors.push(`Профильная труба: стороны должны быть ≥ 2 × толщине стенки (min=${Math.min(width, height)}, требуется ≥ ${s * 2})`);
+        errors.push(
+          `Профильная труба: стороны должны быть ≥ 2 × толщине стенки (min=${Math.min(width, height)}, требуется ≥ ${s * 2})`,
+        );
       } else {
-        volume = (width * height - (width - s * 2) * (height - s * 2)) / 1_000_000 * length;
+        volume = ((width * height - (width - s * 2) * (height - s * 2)) / 1_000_000) * length;
       }
       break;
     case 8: // Уголок
       if (Math.min(width, height) < s) {
-        errors.push(`Уголок: стороны должны быть ≥ толщине стенки (min=${Math.min(width, height)}, требуется ≥ ${s})`);
+        errors.push(
+          `Уголок: стороны должны быть ≥ толщине стенки (min=${Math.min(width, height)}, требуется ≥ ${s})`,
+        );
       } else {
-        volume = (width * s + (height - s) * s) / 1_000_000 * length;
+        volume = ((width * s + (height - s) * s) / 1_000_000) * length;
       }
       break;
     case 9: // Швеллер
@@ -156,11 +162,11 @@ export const calculateWeight = (input: CalculatorInput): CalculatorResult => {
           `Швеллер: ширина ≥ 2 × стенке и высота ≥ стенке (width=${width}, height=${height}, wall=${s})`,
         );
       } else {
-        volume = (width * s + (height - s) * s * 2) / 1_000_000 * length;
+        volume = ((width * s + (height - s) * s * 2) / 1_000_000) * length;
       }
       break;
     case 10: // Шестигранник
-      volume = 2 * (3 ** 0.5) * (diameter / 2000) ** 2 * length;
+      volume = 2 * 3 ** 0.5 * (diameter / 2000) ** 2 * length;
       break;
     default:
       errors.push("Неизвестная форма");

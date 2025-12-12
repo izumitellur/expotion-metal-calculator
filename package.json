@@ -47,6 +47,8 @@
     "build:demo": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
@@ -68,6 +70,7 @@
     "eslint": "^8.57.0",
     "eslint-config-next": "15.5.7",
     "next": "15.5.7",
+    "prettier": "^3.7.4",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "typescript": "5.9.2"

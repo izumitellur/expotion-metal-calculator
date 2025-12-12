@@ -10,4 +10,3 @@ export { MetalChannelIcon } from "./MetalChannelIcon";
 export { HexBarIcon } from "./HexBarIcon";
 export { LogoExp } from "./LogoExp";
 export { LogoZai } from "./LogoZai";
-
