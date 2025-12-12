@@ -36,8 +36,7 @@
     "./styles.css": "./dist/styles.css"
   },
   "files": [
-    "dist",
-    "public/drawings"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"

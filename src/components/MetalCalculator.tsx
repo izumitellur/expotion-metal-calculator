@@ -1,10 +1,22 @@
 "use client";
 
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState, ComponentType } from "react";
 import clsx from "clsx";
 
 import { calculateWeight, defaultInput, ShapeId } from "../lib/calculator";
 import { metalAlloys, metals, metalShapes } from "../lib/data";
+import {
+  BeamIcon,
+  SquareBarIcon,
+  RoundBarIcon,
+  SheetIcon,
+  FlatBarIcon,
+  RoundTubeIcon,
+  ProfileTubeIcon,
+  MetalAngleIcon,
+  MetalChannelIcon,
+  HexBarIcon,
+} from "./icons";
 
 type FormState = Record<
   | "shapeId"
@@ -46,17 +58,17 @@ const labels: Record<keyof FormState, string> = {
   length: "L (длина), м",
 };
 
-const shapeSlug: Record<ShapeId, string> = {
-  1: "beam",
-  2: "square_bar",
-  3: "round_bar",
-  4: "sheet",
-  5: "flat_bar",
-  6: "round_tube",
-  7: "profile_tube",
-  8: "metal_angle",
-  9: "metal_channel",
-  10: "hex_bar",
+const shapeIcons: Record<ShapeId, ComponentType<{ className?: string }>> = {
+  1: BeamIcon,
+  2: SquareBarIcon,
+  3: RoundBarIcon,
+  4: SheetIcon,
+  5: FlatBarIcon,
+  6: RoundTubeIcon,
+  7: ProfileTubeIcon,
+  8: MetalAngleIcon,
+  9: MetalChannelIcon,
+  10: HexBarIcon,
 };
 
 const toNumber = (value: string) => {
@@ -161,10 +173,10 @@ export function MetalCalculator() {
         <div className="emc-body">
           <div className="emc-drawing-panel">
             <div className="emc-drawing-box">
-              <img
-                src={`/drawings/white/${shapeSlug[shapeId]}.svg`}
-                alt={metalShapes.find((s) => s.id === shapeId)?.name}
-              />
+              {(() => {
+                const Icon = shapeIcons[shapeId];
+                return <Icon className="emc-shape-icon" />;
+              })()}
             </div>
           </div>
 
