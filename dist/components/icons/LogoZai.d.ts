@@ -1,3 +1,4 @@
-export declare function LogoZai({ className }: {
-    className?: string;
+import { CSSProperties } from "react";
+export declare function LogoZai({ style }: {
+    style?: CSSProperties;
 }): import("react/jsx-runtime").JSX.Element;

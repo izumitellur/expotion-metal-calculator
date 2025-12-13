@@ -1,3 +1,4 @@
-export declare function HexBarIcon({ className }: {
-    className?: string;
+import { CSSProperties } from "react";
+export declare function HexBarIcon({ style }: {
+    style?: CSSProperties;
 }): import("react/jsx-runtime").JSX.Element;

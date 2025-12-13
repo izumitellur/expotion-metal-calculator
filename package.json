@@ -21,9 +21,7 @@
     "металлопрокат",
     "калькулятор"
   ],
-  "sideEffects": [
-    "**/*.css"
-  ],
+  "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -32,8 +30,7 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
-    },
-    "./styles.css": "./dist/styles.css"
+    }
   },
   "files": [
     "dist"
@@ -43,16 +40,13 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "tsc -p tsconfig.build.json && node -e \"require('fs').copyFileSync('src/styles.css','dist/styles.css')\"",
+    "build": "tsc -p tsconfig.build.json",
     "build:demo": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepublishOnly": "npm run build"
-  },
-  "dependencies": {
-    "clsx": "^2.1.1"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",

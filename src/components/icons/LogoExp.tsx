@@ -1,7 +1,9 @@
-export function LogoExp({ className }: { className?: string }) {
+import { CSSProperties } from "react";
+
+export function LogoExp({ style }: { style?: CSSProperties }) {
   return (
     <svg
-      className={className}
+      style={style}
       width="1165"
       height="1589"
       viewBox="0 0 1165 1589"

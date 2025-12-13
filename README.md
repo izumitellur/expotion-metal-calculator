@@ -20,7 +20,6 @@ npm install expotion-metal-calculator
 
 ```tsx
 import { MetalCalculator } from "expotion-metal-calculator";
-import "expotion-metal-calculator/styles.css";
 
 export default function Page() {
   return <MetalCalculator />;
@@ -32,6 +31,7 @@ export default function Page() {
 - **Что это:** UI-компонент для расчёта теоретического веса металлопроката (балка, труба, лист и т.д.) с моментальным перерасчётом
 - **Профили:** двутавр, квадрат, круг, лист, полоса, труба круглая/профильная, уголок, швеллер, шестигранник
 - **Данные:** встроенные русские наименования металлов/сплавов и их плотности
+- **CSS-in-JS:** все стили встроены, импортировать CSS не нужно
 - **SVG:** все чертежи вшиты в компонент, ничего копировать не нужно
 
 ## Экспорты
@@ -48,9 +48,6 @@ import { metalAlloys, metals, metalShapes } from "expotion-metal-calculator";
 
 // Типы
 import type { CalculatorInput, CalculatorResult, ShapeId } from "expotion-metal-calculator";
-
-// Стили
-import "expotion-metal-calculator/styles.css";
 ```
 
 ## Ссылки

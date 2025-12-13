@@ -1,3 +1,4 @@
-export declare function SheetIcon({ className }: {
-    className?: string;
+import { CSSProperties } from "react";
+export declare function SheetIcon({ style }: {
+    style?: CSSProperties;
 }): import("react/jsx-runtime").JSX.Element;

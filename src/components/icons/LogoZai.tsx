@@ -1,7 +1,9 @@
-export function LogoZai({ className }: { className?: string }) {
+import { CSSProperties } from "react";
+
+export function LogoZai({ style }: { style?: CSSProperties }) {
   return (
     <svg
-      className={className}
+      style={style}
       width="260"
       height="260"
       viewBox="0 0 260 260"

@@ -1,7 +1,9 @@
-export function HexBarIcon({ className }: { className?: string }) {
+import { CSSProperties } from "react";
+
+export function HexBarIcon({ style }: { style?: CSSProperties }) {
   return (
     <svg
-      className={className}
+      style={style}
       width="250"
       height="250"
       viewBox="0 0 250 250"

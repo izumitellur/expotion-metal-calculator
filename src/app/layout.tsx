@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import "../styles.css";
 
 export const metadata: Metadata = {
   title: "Калькулятор массы металлопроката",
