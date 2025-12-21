@@ -18,7 +18,8 @@ import {
   LogoExp,
   LogoZai,
 } from "./icons";
-import { styles, colors } from "./styles";
+import { styles, colors, shadowStyles } from "./styles";
+import { IsolatedRoot } from "./IsolatedRoot";
 
 type FormState = Record<
   | "shapeId"
@@ -197,160 +198,162 @@ export function MetalCalculator() {
   const Icon = shapeIcons[shapeId];
 
   return (
-    <div style={styles.root}>
-      <div style={isMobile ? { ...styles.card, padding: 20 } : styles.card}>
-        <nav style={styles.shapeNav}>
-          {metalShapes.map((shape) => (
-            <button
-              key={shape.id}
-              type="button"
-              style={getTabStyle(shape.id)}
-              onMouseEnter={() => setHoveredTab(shape.id)}
-              onMouseLeave={() => setHoveredTab(null)}
-              onClick={() => handleChange("shapeId")(String(shape.id))}
-            >
-              {shape.name}
-            </button>
-          ))}
-        </nav>
+    <IsolatedRoot styles={shadowStyles}>
+      <div style={styles.root}>
+        <div style={isMobile ? { ...styles.card, padding: 20 } : styles.card}>
+          <nav style={styles.shapeNav}>
+            {metalShapes.map((shape) => (
+              <button
+                key={shape.id}
+                type="button"
+                style={getTabStyle(shape.id)}
+                onMouseEnter={() => setHoveredTab(shape.id)}
+                onMouseLeave={() => setHoveredTab(null)}
+                onClick={() => handleChange("shapeId")(String(shape.id))}
+              >
+                {shape.name}
+              </button>
+            ))}
+          </nav>
 
-        <div style={isMobile ? { ...styles.body, ...styles.bodyMobile } : styles.body}>
-          <div style={styles.drawingPanel}>
-            <div style={styles.drawingBox}>
-              <Icon style={styles.shapeIcon} />
+          <div style={isMobile ? { ...styles.body, ...styles.bodyMobile } : styles.body}>
+            <div style={styles.drawingPanel}>
+              <div style={styles.drawingBox}>
+                <Icon style={styles.shapeIcon} />
+              </div>
             </div>
+
+            <form style={styles.formPanel} onSubmit={onSubmit}>
+              <section style={styles.materialBlock}>
+                <div style={styles.field}>
+                  <label style={styles.label} htmlFor="emc-metalId">
+                    {labels.metalId}
+                  </label>
+                  <select
+                    id="emc-metalId"
+                    style={getInputStyle("metalId")}
+                    value={form.metalId}
+                    onFocus={() => setFocusedInput("metalId")}
+                    onBlur={() => setFocusedInput(null)}
+                    onChange={(e) => handleChange("metalId")(e.target.value)}
+                  >
+                    {metals.map((metal) => (
+                      <option key={metal.id} value={metal.id}>
+                        {metal.name} ({metal.density} кг/м³)
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div style={styles.field}>
+                  <label style={styles.label} htmlFor="emc-alloyId">
+                    {labels.alloyId}
+                  </label>
+                  <select
+                    id="emc-alloyId"
+                    style={getInputStyle("alloyId")}
+                    value={form.alloyId}
+                    onFocus={() => setFocusedInput("alloyId")}
+                    onBlur={() => setFocusedInput(null)}
+                    onChange={(e) => handleChange("alloyId")(e.target.value)}
+                  >
+                    <option value="0">Без сплава</option>
+                    {alloysForMetal.map((alloy) => (
+                      <option key={alloy.id} value={alloy.id}>
+                        {alloy.name} ({alloy.density} кг/м³)
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </section>
+
+              <section style={styles.fieldsBlock}>
+                {(
+                  ["width", "height", "s", "s2", "diameter", "quantity", "length"] as (keyof FormState)[]
+                ).map(
+                  (fieldKey) =>
+                    fieldIsVisible(fieldKey) && (
+                      <div key={fieldKey} style={{ ...styles.field, ...styles.fieldCompact }}>
+                        <label style={styles.label} htmlFor={`emc-${fieldKey}`}>
+                          {labels[fieldKey]}
+                        </label>
+                        <input
+                          id={`emc-${fieldKey}`}
+                          type="number"
+                          inputMode="decimal"
+                          min="0"
+                          step={fieldKey === "s" || fieldKey === "s2" ? "0.1" : "1"}
+                          style={getInputStyle(fieldKey)}
+                          value={form[fieldKey]}
+                          onFocus={() => setFocusedInput(fieldKey)}
+                          onBlur={() => setFocusedInput(null)}
+                          onChange={(e) => handleChange(fieldKey)(e.target.value)}
+                        />
+                      </div>
+                    ),
+                )}
+              </section>
+
+              <section style={styles.resultBlock}>
+                <div style={styles.weightCell}>
+                  <div style={styles.weightLabel}>Вес, кг</div>
+                  <div style={styles.weightDisplay} aria-label="Вес, кг">
+                    {weight}
+                  </div>
+                </div>
+                <div style={styles.actions}>
+                  <button
+                    type="submit"
+                    style={getBtnStyle("primary", "submit")}
+                    onMouseEnter={() => setHoveredBtn("submit")}
+                    onMouseLeave={() => setHoveredBtn(null)}
+                  >
+                    Рассчитать
+                  </button>
+                  <button
+                    type="button"
+                    style={getBtnStyle("ghost", "reset")}
+                    onMouseEnter={() => setHoveredBtn("reset")}
+                    onMouseLeave={() => setHoveredBtn(null)}
+                    onClick={() => {
+                      setForm(getDefaultState());
+                      setErrors([]);
+                      setWeight("0.00");
+                    }}
+                  >
+                    Сбросить
+                  </button>
+                </div>
+              </section>
+
+              {errors.length > 0 && (
+                <div style={styles.errorPanel}>
+                  <p>Проверьте введённые данные:</p>
+                  <ul style={styles.errorList}>
+                    {errors.map((err) => (
+                      <li key={err}>{err}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </form>
           </div>
 
-          <form style={styles.formPanel} onSubmit={onSubmit}>
-            <section style={styles.materialBlock}>
-              <div style={styles.field}>
-                <label style={styles.label} htmlFor="emc-metalId">
-                  {labels.metalId}
-                </label>
-                <select
-                  id="emc-metalId"
-                  style={getInputStyle("metalId")}
-                  value={form.metalId}
-                  onFocus={() => setFocusedInput("metalId")}
-                  onBlur={() => setFocusedInput(null)}
-                  onChange={(e) => handleChange("metalId")(e.target.value)}
-                >
-                  {metals.map((metal) => (
-                    <option key={metal.id} value={metal.id}>
-                      {metal.name} ({metal.density} кг/м³)
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div style={styles.field}>
-                <label style={styles.label} htmlFor="emc-alloyId">
-                  {labels.alloyId}
-                </label>
-                <select
-                  id="emc-alloyId"
-                  style={getInputStyle("alloyId")}
-                  value={form.alloyId}
-                  onFocus={() => setFocusedInput("alloyId")}
-                  onBlur={() => setFocusedInput(null)}
-                  onChange={(e) => handleChange("alloyId")(e.target.value)}
-                >
-                  <option value="0">Без сплава</option>
-                  {alloysForMetal.map((alloy) => (
-                    <option key={alloy.id} value={alloy.id}>
-                      {alloy.name} ({alloy.density} кг/м³)
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </section>
-
-            <section style={styles.fieldsBlock}>
-              {(
-                ["width", "height", "s", "s2", "diameter", "quantity", "length"] as (keyof FormState)[]
-              ).map(
-                (fieldKey) =>
-                  fieldIsVisible(fieldKey) && (
-                    <div key={fieldKey} style={{ ...styles.field, ...styles.fieldCompact }}>
-                      <label style={styles.label} htmlFor={`emc-${fieldKey}`}>
-                        {labels[fieldKey]}
-                      </label>
-                      <input
-                        id={`emc-${fieldKey}`}
-                        type="number"
-                        inputMode="decimal"
-                        min="0"
-                        step={fieldKey === "s" || fieldKey === "s2" ? "0.1" : "1"}
-                        style={getInputStyle(fieldKey)}
-                        value={form[fieldKey]}
-                        onFocus={() => setFocusedInput(fieldKey)}
-                        onBlur={() => setFocusedInput(null)}
-                        onChange={(e) => handleChange(fieldKey)(e.target.value)}
-                      />
-                    </div>
-                  ),
-              )}
-            </section>
-
-            <section style={styles.resultBlock}>
-              <div style={styles.weightCell}>
-                <div style={styles.weightLabel}>Вес, кг</div>
-                <div style={styles.weightDisplay} aria-label="Вес, кг">
-                  {weight}
-                </div>
-              </div>
-              <div style={styles.actions}>
-                <button
-                  type="submit"
-                  style={getBtnStyle("primary", "submit")}
-                  onMouseEnter={() => setHoveredBtn("submit")}
-                  onMouseLeave={() => setHoveredBtn(null)}
-                >
-                  Рассчитать
-                </button>
-                <button
-                  type="button"
-                  style={getBtnStyle("ghost", "reset")}
-                  onMouseEnter={() => setHoveredBtn("reset")}
-                  onMouseLeave={() => setHoveredBtn(null)}
-                  onClick={() => {
-                    setForm(getDefaultState());
-                    setErrors([]);
-                    setWeight("0.00");
-                  }}
-                >
-                  Сбросить
-                </button>
-              </div>
-            </section>
-
-            {errors.length > 0 && (
-              <div style={styles.errorPanel}>
-                <p>Проверьте введённые данные:</p>
-                <ul style={styles.errorList}>
-                  {errors.map((err) => (
-                    <li key={err}>{err}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </form>
+          <footer style={styles.footerNote}>
+            <span>expotion_metal_calc — разработано</span>
+            <a href="https://expotion.tech" target="_blank" rel="noreferrer" style={styles.footerLink}>
+              <LogoExp style={styles.footerLogo} />
+              <span>expotion.tech</span>
+            </a>
+            <span>×</span>
+            <a href="https://zaitsv.dev" target="_blank" rel="noreferrer" style={styles.footerLink}>
+              <LogoZai style={styles.footerLogo} />
+              <span>zaitsv.dev</span>
+            </a>
+            <span>× Ringil</span>
+          </footer>
         </div>
-
-        <footer style={styles.footerNote}>
-          <span>expotion_metal_calc — разработано</span>
-          <a href="https://expotion.tech" target="_blank" rel="noreferrer" style={styles.footerLink}>
-            <LogoExp style={styles.footerLogo} />
-            <span>expotion.tech</span>
-          </a>
-          <span>×</span>
-          <a href="https://zaitsv.dev" target="_blank" rel="noreferrer" style={styles.footerLink}>
-            <LogoZai style={styles.footerLogo} />
-            <span>zaitsv.dev</span>
-          </a>
-          <span>× Ringil</span>
-        </footer>
       </div>
-    </div>
+    </IsolatedRoot>
   );
 }

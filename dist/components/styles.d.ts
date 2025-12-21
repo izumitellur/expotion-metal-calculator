@@ -15,3 +15,8 @@ declare const colors: {
 };
 export declare const styles: Record<string, CSSProperties>;
 export { colors };
+/**
+ * CSS-строка для инъекции в Shadow DOM.
+ * Содержит reset и базовые стили для изоляции.
+ */
+export declare const shadowStyles: string;

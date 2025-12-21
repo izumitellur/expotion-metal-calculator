@@ -51,8 +51,8 @@ export const styles: Record<string, CSSProperties> = {
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-    fontFamily: "inherit",
-    fontSize: "inherit",
+    fontFamily,
+    fontSize: 14,
   },
   shapeTabActive: {
     borderColor: colors.accent,
@@ -132,7 +132,7 @@ export const styles: Record<string, CSSProperties> = {
     background: colors.inputBg,
     color: colors.text,
     fontSize: 15,
-    fontFamily: "inherit",
+    fontFamily,
     outline: "none",
   },
   inputFocus: {
@@ -180,7 +180,7 @@ export const styles: Record<string, CSSProperties> = {
     padding: "16px 20px",
     fontSize: 15,
     fontWeight: 600,
-    fontFamily: "inherit",
+    fontFamily,
     transition: "transform 150ms ease, background 150ms ease, border-color 150ms ease",
     height: 56,
     display: "inline-flex",
@@ -235,4 +235,29 @@ export const styles: Record<string, CSSProperties> = {
 };
 
 export { colors };
+
+/**
+ * CSS-строка для инъекции в Shadow DOM.
+ * Содержит reset и базовые стили для изоляции.
+ */
+export const shadowStyles = `
+  :host {
+    all: initial;
+    display: block;
+    font-family: "IBM Plex Sans", "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    color: ${colors.text};
+    color-scheme: dark;
+    box-sizing: border-box;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+  
+  /* Reset наследуемых стилей */
+  input, select, button, textarea {
+    font: inherit;
+    color: inherit;
+  }
+`;
 
