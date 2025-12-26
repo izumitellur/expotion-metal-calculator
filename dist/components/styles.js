@@ -36,7 +36,9 @@ export const styles = {
     },
     shapeTab: {
         background: colors.black,
-        border: `1px solid ${colors.border}`,
+        borderWidth: 1,
+        borderStyle: "solid",
+        borderColor: colors.border,
         color: colors.text,
         padding: "10px 12px",
         borderRadius: 0,
@@ -123,7 +125,9 @@ export const styles = {
     input: {
         width: "100%",
         padding: "10px 12px",
-        border: `1px solid ${colors.border}`,
+        borderWidth: 1,
+        borderStyle: "solid",
+        borderColor: colors.border,
         borderRadius: 0,
         background: colors.inputBg,
         color: colors.text,
@@ -171,7 +175,9 @@ export const styles = {
     },
     btn: {
         cursor: "pointer",
-        border: "1px solid transparent",
+        borderWidth: 1,
+        borderStyle: "solid",
+        borderColor: "transparent",
         borderRadius: 0,
         padding: "16px 20px",
         fontSize: 15,
